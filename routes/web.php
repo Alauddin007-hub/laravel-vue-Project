@@ -37,12 +37,24 @@ Route::middleware('auth')->group(function () {
 
 Route::get('home', function (){
     return Inertia::render('Home');
-});
-// Route::get('home', function (){
-//     return Inertia::render('About');
-// });
-// Route::get('home', function (){
-//     return Inertia::render('Service');
-// });
+})->name('home');
+Route::get('about', function (){
+    return Inertia::render('About');
+})->name('about');
+Route::get('service', function (){
+    return Inertia::render('Service');
+})->name('service');
+
+// Route::get('gallery', function (){
+//     return Inertia::render('Gallery');
+// })->name('gallery');
+
+Route::get('serviceDetail', function (){
+    return Inertia::render('ServiceDetails');
+})->name('service.detail');
+
+Route::get('contact', function (){
+    return Inertia::render('Contact');
+})->name('contact');
 
 require __DIR__.'/auth.php';
