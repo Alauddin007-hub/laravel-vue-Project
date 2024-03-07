@@ -1,13 +1,9 @@
 <script setup>
 import NavBarLayout from "@/Layouts/NavBarLayout.vue";
-import Header from "@/Components/Header.vue";
 import ServiceDetail from "@/Components/ServiceDetail.vue";
 import AppointmentSubmit from "@/Components/AppointmentSubmit.vue";
 import Appointment from '@/Components/Appointment.vue';
 import ProfessionalDoctors from '@/Components/ProfessionalDoctors.vue';
-import Footer from '@/Components/Footer.vue';
-import ScrollTop from '@/Components/ScrollTop.vue';
-import MobileMenu from '@/Components/MobileMenu.vue';
 </script>
 
 <template>

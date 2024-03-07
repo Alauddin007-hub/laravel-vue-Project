@@ -1,8 +1,12 @@
 <script setup>
-   
+import NavBarLayout from "@/Layouts/NavBarLayout.vue";
+import Appointment from '@/Components/Appointment.vue';
 </script>
 
 <template>
+    <!-- Header Section Start -->
+    <NavBarLayout>
+    <!-- Header Section End -->
 
     <!-- Breadcrumb Section Start -->
     <div class="section breadcrumb-section bg-name-primary">
@@ -31,7 +35,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="service-long-title text-center">
-                        <h2 class="title"> <span>We are sharing some happy</span> <br> moments with our staff and <span class="text-style word-wave" data-splitting="words" data-aos="zoom-in" data-aos-duration="2000">happy patients.</span></h2>
+                        <h2 class="title"> <span>We are sharing some happy</span> <br> moments with our staff and <span
+                                class="text-style word-wave" data-splitting="words" data-aos="zoom-in"
+                                data-aos-duration="2000">happy patients.</span></h2>
                     </div>
                 </div>
             </div>
@@ -63,7 +69,8 @@
                                 <div class="single-gallery">
                                     <div class="gallery-thumb popup-gallery">
                                         <a href="assets/images/gallery/1.jpg">
-                                            <img class="fit-image" src="assets/images/gallery/1.jpg" alt="Gallery Image">
+                                            <img class="fit-image" src="assets/images/gallery/1.jpg"
+                                                alt="Gallery Image">
                                             <div class="bg-overlay"></div>
                                         </a>
                                         <span>Operation</span>
@@ -79,7 +86,8 @@
                                 <div class="single-gallery">
                                     <div class="gallery-thumb popup-gallery">
                                         <a href="assets/images/gallery/2.jpg">
-                                            <img class="fit-image" src="assets/images/gallery/2.jpg" alt="Gallery Image">
+                                            <img class="fit-image" src="assets/images/gallery/2.jpg"
+                                                alt="Gallery Image">
                                             <div class="bg-overlay"></div>
                                         </a>
                                         <span>Doctor's</span>
@@ -95,7 +103,8 @@
                                 <div class="single-gallery">
                                     <div class="gallery-thumb popup-gallery">
                                         <a href="assets/images/gallery/3.jpg">
-                                            <img class="fit-image" src="assets/images/gallery/3.jpg" alt="Gallery Image">
+                                            <img class="fit-image" src="assets/images/gallery/3.jpg"
+                                                alt="Gallery Image">
                                             <div class="bg-overlay"></div>
                                         </a>
                                         <span>Medical</span>
@@ -111,7 +120,8 @@
                                 <div class="single-gallery">
                                     <div class="gallery-thumb popup-gallery">
                                         <a href="assets/images/gallery/4.jpg">
-                                            <img class="fit-image" src="assets/images/gallery/4.jpg" alt="Gallery Image">
+                                            <img class="fit-image" src="assets/images/gallery/4.jpg"
+                                                alt="Gallery Image">
                                             <div class="bg-overlay"></div>
                                         </a>
                                         <span>Operation</span>
@@ -127,7 +137,8 @@
                                 <div class="single-gallery">
                                     <div class="gallery-thumb popup-gallery">
                                         <a href="assets/images/gallery/5.jpg">
-                                            <img class="fit-image" src="assets/images/gallery/5.jpg" alt="Gallery Image">
+                                            <img class="fit-image" src="assets/images/gallery/5.jpg"
+                                                alt="Gallery Image">
                                             <div class="bg-overlay"></div>
                                         </a>
                                         <span>Doctor's</span>
@@ -143,7 +154,8 @@
                                 <div class="single-gallery">
                                     <div class="gallery-thumb popup-gallery">
                                         <a href="assets/images/gallery/6.jpg">
-                                            <img class="fit-image" src="assets/images/gallery/6.jpg" alt="Gallery Image">
+                                            <img class="fit-image" src="assets/images/gallery/6.jpg"
+                                                alt="Gallery Image">
                                             <div class="bg-overlay"></div>
                                         </a>
                                         <span>Medical</span>
@@ -222,4 +234,7 @@
         </div>
     </div>
     <!-- Appoinment Section End -->
+
+    
+</NavBarLayout>
 </template>

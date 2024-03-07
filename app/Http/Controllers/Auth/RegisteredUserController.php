@@ -19,9 +19,9 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): Response
+    public function create()
     {
-        return Inertia::render('Auth/Register');
+        return view('admin.auth.register');
     }
 
     /**
@@ -37,11 +37,16 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $imageName = time().'.'.$request->photo->extension();
+        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'photo' => $imageName,
             'password' => Hash::make($request->password),
         ]);
+
+        $request->image->move(('storage/users'), $imageName);
 
         event(new Registered($user));
 

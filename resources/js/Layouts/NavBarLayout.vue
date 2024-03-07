@@ -13,7 +13,7 @@ import MobileMenu from '@/Components/MobileMenu.vue';
 
                     <!-- Header Logo Start -->
                     <div class="header-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a>
+                        <Link :href="route('home')"><img src="assets/images/logo/logo.png" alt="Logo"></Link>
                     </div>
                     <!-- Header Logo End -->
 
@@ -32,17 +32,13 @@ import MobileMenu from '@/Components/MobileMenu.vue';
                             <li class="has-children">
                                 <a href="#">Pages</a>
                                 <ul class="sub-menu">
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="error-404.html">Error 404</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><Link :href="route('gallery')">Gallery</Link></li>
                                 </ul>
                             </li>
                             <li class="has-children">
-                                <Link href="#">Blog</Link>
+                                <Link :href="route('blog')">Blog</Link>
                                 <ul class="sub-menu">
-                                    <li><a href="blog-grid.html">Blog Grid</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                    <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
+                                    <li><Link :href="route('blog.detail')">Blog Details Sidebar</Link></li>
                                 </ul>
                             </li>
                             <li>
