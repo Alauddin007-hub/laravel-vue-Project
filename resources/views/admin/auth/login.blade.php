@@ -53,15 +53,16 @@
             <div class="line"></div>
           </div>
           <div class="form-body mt-4">
-            <form class="row g-3">
+            <form class="row g-3" action="{{ route('login') }}" method="POST">
+            @csrf
               <div class="col-12">
                 <label for="inputEmailAddress" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
+                <input type="email" class="form-control" id="inputEmailAddress" placeholder="Enter Your Email Address" name="email">
               </div>
               <div class="col-12">
                 <label for="inputChoosePassword" class="form-label">Password</label>
                 <div class="input-group" id="show_hide_password">
-                  <input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678"
+                  <input type="password" class="form-control border-end-0" id="inputChoosePassword" name="password"
                     placeholder="Enter Password">
                   <a href="javascript:;" class="input-group-text bg-transparent"><i
                       class="bi bi-eye-slash-fill"></i></a>
