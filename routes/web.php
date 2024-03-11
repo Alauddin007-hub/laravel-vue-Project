@@ -1,6 +1,13 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SaleController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\UserTypeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -68,5 +75,39 @@ Route::get('blog', function (){
 Route::get('contact', function (){
     return Inertia::render('Contact');
 })->name('contact');
+
+
+Route::controller(CategoryController::class)->group(function(){
+    Route::get('categories', 'index')->name('category');
+    Route::get('category/create', 'create')->name('category.post');
+    Route::post('category', 'store')->name('category.store');
+    Route::get('category/edit/{id}', 'edit')->name('category.edit');
+    Route::post('category/update/{id}', 'update')->name('category.update');
+    Route::get('category/delete/{id}', 'destroy')->name('category.delete');
+});
+Route::controller(MedicineController::class)->group(function(){
+    Route::get('medicines', 'index')->name('medicine');
+    Route::get('medicine/create', 'create')->name('medicine.post');
+});
+Route::controller(SupplierController::class)->group(function(){
+    Route::get('suppliers', 'index')->name('suppliers');
+    Route::get('suppliers/create', 'create')->name('suppliers.post');
+});
+Route::controller(CustomerController::class)->group(function(){
+    Route::get('customers', 'index')->name('customers');
+    Route::get('customers/create', 'create')->name('customers.post');
+});
+Route::controller(OrderController::class)->group(function(){
+    Route::get('order', 'index')->name('orders');
+    Route::get('order/create', 'create')->name('order.post');
+});
+Route::controller(SaleController::class)->group(function(){
+    Route::get('sales', 'index')->name('sales');
+    Route::get('sale/create', 'create')->name('sale.post');
+});
+Route::controller(UserTypeController::class)->group(function(){
+    Route::get('user_type', 'index')->name('user.type');
+    Route::get('user/type', 'create')->name('user.type.post');
+});
 
 require __DIR__.'/auth.php';
