@@ -88,6 +88,11 @@ Route::controller(CategoryController::class)->group(function(){
 Route::controller(MedicineController::class)->group(function(){
     Route::get('medicines', 'index')->name('medicine');
     Route::get('medicine/create', 'create')->name('medicine.post');
+    Route::post('medicine/store', 'store')->name('medicine.store');
+    Route::post('medicine/show/{id}', 'show')->name('medicine.show');
+    Route::get('medicine/edit/{id}', 'edit')->name('medicine.edit');
+    Route::post('medicine/update/{id}', 'update')->name('medicine.update');
+    Route::get('medicine/delete/{id}', 'destroy')->name('medicine.delete');
 });
 Route::controller(SupplierController::class)->group(function(){
     Route::get('suppliers', 'index')->name('suppliers');
