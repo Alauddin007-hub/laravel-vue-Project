@@ -60,7 +60,7 @@
 							<th>Action</th>
 						</tr>
 					</thead>
-					<!-- name 	category_id 	brand 	purchase_price 	discount 	selling_price  photo	stock -->
+					
 					<tbody>
 						@foreach($medicines as $key=>$item)
 						<tr>

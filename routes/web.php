@@ -97,6 +97,11 @@ Route::controller(MedicineController::class)->group(function(){
 Route::controller(SupplierController::class)->group(function(){
     Route::get('suppliers', 'index')->name('suppliers');
     Route::get('suppliers/create', 'create')->name('suppliers.post');
+    Route::post('suppliers/store', 'store')->name('suppliers.store');
+    Route::get('suppliers/show/{id}', 'show')->name('suppliers.show');
+    Route::get('suppliers/edit/{id}', 'edit')->name('suppliers.edit');
+    Route::post('suppliers/update/{id}', 'update')->name('suppliers.update');
+    Route::get('suppliers/delete/{id}', 'destroy')->name('suppliers.delete');
 });
 Route::controller(CustomerController::class)->group(function(){
     Route::get('customers', 'index')->name('customers');

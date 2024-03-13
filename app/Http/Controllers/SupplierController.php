@@ -12,7 +12,8 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
+        $supplier = Supplier::all();
+        return view('admin.supplier.index', compact('supplier'));
     }
 
     /**
@@ -20,7 +21,7 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.supplier.create');
     }
 
     /**
@@ -28,7 +29,21 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+
+        $this->validate($request, [
+            'name' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+        ]);
+
+        Supplier::insert([
+            'name'=> $request->name,
+            'phone'=> $request->phone,
+            'address'=> $request->address,
+        ]);
+
+        return redirect('suppliers')->with('success', 'Supplier has been added');
     }
 
     /**
@@ -42,9 +57,10 @@ class SupplierController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Supplier $supplier)
+    public function edit(Supplier $supplier, $id)
     {
-        //
+        $supplier = Supplier::find($id);
+        return view('admin.supplier.edit', compact('supplier'));
     }
 
     /**
@@ -52,14 +68,31 @@ class SupplierController extends Controller
      */
     public function update(Request $request, Supplier $supplier)
     {
-        //
+        // dd($request->all());
+
+        $this->validate($request, [
+            'name' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+        ]);
+
+        $supplier = Supplier::find($request->id);
+        $supplier->update([
+            'name'=> $request->name,
+            'phone'=> $request->phone,
+            'address'=> $request->address,
+        ]);
+
+        return redirect('suppliers')->with('success', 'Supplier has been Changed');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Supplier $supplier)
+    public function destroy(Request $request)
     {
-        //
+        $medicine = Supplier::find($request->id);
+        $medicine->delete();
+        return back()->with('success', "Supplier has been deleted");
     }
 }

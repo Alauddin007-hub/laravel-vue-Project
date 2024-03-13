@@ -32,9 +32,7 @@ class MedicineController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-
-        // <!-- name 	category_id 	brand 	purchase_price 	discount 	selling_price  photo	stock -->
-
+        
         $this->validate($request, [
             'name' => 'required',
             'category' => 'required',
